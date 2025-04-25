@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico listas - Lista Ligeira</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lista Ligeira</h1>
+        <nav role="navigation">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Fundo escuro quando o menu está aberto -->
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Menu suspenso -->
+    <nav id="mobile-menu" class="mobile-menu">
+        <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="novaLista.html">Nova Lista</a></li>
+            <li><a href="#" class="active">Histórico de listas</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Listas Favoritas</a></li>
+            <li><a href="#">Sobre o app</a></li>
+            <li><a href="#">Dropdown ▼</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section class="lista-container">
+        <h2>Suas Listas Salvas</h2>
+        <div id="listasSalvas"></div>
+        <!-- aqui em cima poderia ser só uma div ao invés de ul? -->
+        <p id="nenhumaListaMsg" style="display: none; color: #777;">Nenhuma lista salva ainda.</p>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="historico.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Ligeira</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">          CONFERIR SE AINDA TO USANDO MESMOOOOOOOO -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lista Ligeira</h1>
+    </header>
+
+    <section class="hero">
+        <div class="image-slider">
+            <!-- Aqui será inserida um carrossel de imagens do meu app -->
+        </div>
+        <div class="content">
+            <h2>Necessidades da sua rotina com <span class="highlight">eficiência!</span></h2>
+            <p>Menos tempo organizando, mais tempo aproveitando</p>
+            <a href="login.html"  class="btn-primary">Vamos iniciar</a>
+        </div>
+    </section>
+
+    <!-- IMPORTANDO O JS -->
+    <script src="app.js" defer></script>
+
+    <script>
+        // VERIFICAÇÃO SE O NAVEGADOR SUPORTA PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                // Msgs no console se deu bom ou não    VVV
+                .then(() => console.log("Service Worker registrado com sucesso!"))
+                .catch(error => console.log("Erro ao registrar Service Worker:", error));
+        }
+    </script>
+
+</body>
+</html>
