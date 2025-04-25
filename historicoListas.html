@@ -22,8 +22,8 @@
     <!-- Menu suspenso -->
     <nav id="mobile-menu" class="mobile-menu">
         <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">&times;</button>
+        <div id="boasVindasMenu" class="boas-vindas-usuario"></div>
         <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="novaLista.html">Nova Lista</a></li>
             <li><a href="#" class="active">Histórico de listas</a></li>
             <li><a href="#">Configurações</a></li>
@@ -37,7 +37,6 @@
     <section class="lista-container">
         <h2>Suas Listas Salvas</h2>
         <div id="listasSalvas"></div>
-        <!-- aqui em cima poderia ser só uma div ao invés de ul? -->
         <p id="nenhumaListaMsg" style="display: none; color: #777;">Nenhuma lista salva ainda.</p>
     </section>
 

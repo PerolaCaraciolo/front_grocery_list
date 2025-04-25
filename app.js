@@ -1,3 +1,5 @@
+const baseURL = "https://back-grocery-list.onrender.com";
+
 // Array para armazenar os produtos temporários antes de salvar a lista
 let listaDeCompras = [];
 let listaId = null;                                                                         // Identificador da lista em modo edição
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     listaId = params.get("edit");
 
     if (listaId) {
-        fetch(`http://localhost:3000/api/listasRoutes/${listaId}`)
+        fetch(`${baseURL}/api/listasRoutes/${listaId}`)
             .then(res => res.json())
             .then(data => {
                 document.getElementById("nomeLista").value = data.nomeLista;
@@ -191,8 +193,8 @@ function salvarLista(event) {
 // Lógica isolada pra envio da lista pro backend
 function enviarLista(lista) {
   const url = listaId
-    ? `http://localhost:3000/api/listasRoutes/${listaId}`
-    : "http://localhost:3000/api/listasRoutes";
+    ? `${baseURL}/api/listasRoutes/${listaId}`
+    : `${baseURL}/api/listasRoutes`;
 
   const metodo = listaId ? "PUT" : "POST";
 

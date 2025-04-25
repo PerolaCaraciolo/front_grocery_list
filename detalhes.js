@@ -2,6 +2,8 @@
 // detalhes.js - Gerencia a página de detalhes da lista
 // ===========================================
 
+const baseURL = "https://back-grocery-list.onrender.com";
+
 // Variável global para armazenar os dados da lista carregada
 let listaDetalhes = null;
 
@@ -21,7 +23,7 @@ function carregarDetalhes() {
     }
 
     // Faz o fetch para obter a lista
-    fetch(`http://localhost:3000/api/listasRoutes/${listaId}`)
+    fetch(`${baseURL}/api/listasRoutes/${listaId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao buscar os detalhes da lista: " + response.status);
@@ -80,7 +82,7 @@ function duplicarLista() {
         // Não precisa mandar dataCriacao nem _id, já que o backend define automaticamente
     };
 
-    fetch("http://localhost:3000/api/listasRoutes", {
+    fetch(`${baseURL}/api/listasRoutes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(novaLista)
@@ -116,7 +118,7 @@ function excluirLista() {
     const confirmacao = confirm("Tem certeza que deseja excluir essa lista?");
     if (!confirmacao) return;
     
-    fetch(`http://localhost:3000/api/listasRoutes/${listaDetalhes._id}`, {
+    fetch(`${baseURL}/api/listasRoutes/${listaDetalhes._id}`, {
         method: "DELETE"
     })
     .then(response => {

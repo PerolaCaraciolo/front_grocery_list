@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Lista Ligeira</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <header>
+    <h1>Lista Ligeira</h1>
+  </header>
+
+  <main class="login-container">
+    <div class="tabs">
+      <button id="btnLogin" class="tab active" onclick="mostrarLogin()">Entrar</button>
+      <button id="btnCadastro" class="tab" onclick="mostrarCadastro()">Cadastrar</button>
+    </div>
+
+    <!-- Formulário de Login -->
+    <form id="formLogin" class="form" onsubmit="logarUsuario(event)">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="e-mail" required/>
+      <input type="password" id="loginSenha" placeholder="senha" required/>
+      <button type="submit" class="btn-primary">Entrar</button>
+    </form>
+
+    <!-- Formulário de Cadastro -->
+    <form id="formCadastro" class="form hidden" onsubmit="cadastrarUsuario(event)">
+      <h2>Cadastrar</h2>
+      <input type="text" id="cadastroNome" placeholder="nome" required/>
+      <input type="email" id="cadastroEmail" placeholder="e-mail" required/>
+      <input type="password" id="cadastroSenha" placeholder="senha" required/>
+      <button type="submit" class="btn-secondary">Criar Conta</button>
+    </form>
+  </main>
+
+  <script src="login.js"></script>
+
+</body>
+</html>

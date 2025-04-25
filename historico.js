@@ -1,5 +1,7 @@
 // historico.js
 
+const baseURL = "https://back-grocery-list.onrender.com";
+
 // Quando o DOM estiver totalmente carregado, dispara a função pra buscar as listas
 document.addEventListener("DOMContentLoaded", () => {
     carregarListasSalvas();
@@ -15,7 +17,7 @@ function carregarListasSalvas() {
         return;
     }
 
-    fetch(`http://localhost:3000/api/listasRoutes?usuarioId=${usuarioId}`)
+    fetch(`${baseURL}/api/listasRoutes?usuarioId=${usuarioId}`)
     .then(response => {
       if (!response.ok) throw new Error("Erro na resposta da API.");
       return response.json();
